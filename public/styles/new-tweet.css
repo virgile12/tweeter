@@ -71,4 +71,10 @@
     justify-content: flex-end;
     margin-right: 15px;
     margin-bottom: 2rem;
+
   }
+  .compose-tweet  span.max-char-error {
+    color: red;
+  }
+
+  /* textarea:active or :focus (selector)

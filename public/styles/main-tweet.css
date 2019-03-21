@@ -1,5 +1,5 @@
 .main-tweets-container {
-    border: 0.5px solid black;
+    border: 0.5px solid grey;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -68,6 +68,10 @@
     display: flex;
     padding-left: 0.7rem;
     font: 1rem italic;
+}
+
+.main-tweets-container:hover {
+    border: 1px solid black;
 }
 
 

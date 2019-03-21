@@ -1,0 +1,82 @@
+.main-tweets-container {
+    border: 0.5px solid black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    width: 450px;
+    margin-top: 2rem;
+    border-radius: 5px;
+}
+
+
+.main-tweets-container header.tweet-header-sizing {
+    background-color: rgb(231, 211, 211);
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.main-tweets-container header div.img-h2-header {
+    align-items: center;
+    display: flex;
+    height: 100%;
+}
+
+.main-tweets-container header div.img-h2-header img {
+    display: inline;
+    padding: 0.8rem;
+    width: 80px;
+}
+.main-tweets-container header div.img-h2-header .move-motherfucker{
+    display: inline;
+    font-size: 1.2rem;
+    align-self: normal;
+}
+
+.main-tweets-container header div.h3-header h3.h3-header-text {
+    font-size: 0.7rem;
+    padding-right: 0.6rem;
+    padding-top: 0.6rem;
+}
+
+.main-tweets-container header div.img-h3 {
+    justify-content: flex-end;
+}
+
+.main-tweets-container main.main-tweet-box{
+    display: flex;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+}
+
+.main-tweets-container main.main-tweet-box p.main-tweet-text{
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    font-size: 1.0rem;
+    padding-left: 1rem;
+}
+
+
+.main-tweets-container footer.footer-main {
+    border-top: 0.5px solid black;
+    width: 100%;
+}
+
+.main-tweets-container footer.footer-main h3.footer-main-h3 {
+    display: flex;
+    padding-left: 0.7rem;
+    font: 1rem italic;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -12,12 +12,14 @@
     <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Roboto+Condensed:300i,700i" rel="stylesheet">
     
     <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="./styles/layout.css" type="text/css" />
     <!-- nav.css stylesheet implementation-->
     <link rel="stylesheet" href="./styles/nav.css" type="text/css" />
     <!-- new-tweet CSS file link-->
     <link rel="stylesheet" href="./styles/new-tweet.css" type="text/css" />
-
+    <!--Main tweets stylesheet      -->
+    <link rel="stylesheet" href="./styles/main-tweet.css" type="text/css" />
+    
     
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -46,11 +48,32 @@
             <span class="counter">140</span>
           </form>
         </div>
-        <article class="main-tweets-container"> 
-          <header>test</header>
-          <footer>test</footer>
-         </article>
       </div>
+        <div class="wrapper">
+          <article class="main-tweets-container flex"> 
+            <header class="tweet-header-sizing">
+               <div class="img-h2-header">
+                <img src="http://placehold.it/200x200">
+                <h2 class="move-motherfucker">Newton
+                </h2>
+              </div>
+              <div class ="h3-header">
+                <h3 class="h3-header-text">@MrPavlovich
+                </h3>
+              </div>
+            </header>
+            <main class="main-tweet-box">
+              <p class="main-tweet-text">main body of tweet
+              </p>
+            </main>
+            
+            <footer class="footer-main">
+              <div >
+                <h3 class="footer-main-h3">10 days ago</h3>
+              </div>
+            </footer>
+          </article>
+        </div>
       
     </main>
 

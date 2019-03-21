@@ -5,7 +5,7 @@
  */
 
 const request = (options, cb) => {
-    
+    console.log(options)
     $.ajax(options)
 
     .done(response => {
@@ -17,30 +17,27 @@ const request = (options, cb) => {
     })
 
     .always(() => {
-    alert("will loooooove youuuuuuuu")
     });
 };
 
 
 
-
-
-let tweetDb = {
-    "user": {
-        "name": "Newton",
-        "avatars": {
-            "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-            "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-            "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-        },
-        "handle": "@SirIsaac"
-    },
-    "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1553196460021
+// let tweetDb = {
+//     "user": {
+//         "name": "Newton",
+//         "avatars": {
+//             "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
+//             "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
+//             "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
+//         },
+//         "handle": "@SirIsaac"
+//     },
+//     "content": {
+//         "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//     "created_at": 1553196460021
     
-}
+// }
 
 createTweetElement = (tweetObj) => {
     
@@ -112,19 +109,35 @@ for (const tweetsObjs of data) {
     };
 };
 
-$(document).ready(function() {
-    
-    const url = 'http://localhost:8080/tweets';
+const url = 'http://localhost:8080/tweets';
 
-        
-            
-            
+const returnMeTheOption = function(method, data) {
+    return {
+        url: '/tweets',
+        method: method,
+        data: data
+    }
+} 
+
+$(document).ready(function() {
+
 
             // take in array of objects for tweets and append each one to articleMain
             // leverage the createTweetElement by passing it to the tweet object
             
             // use the returned jQuery object by appending it to the articleMain section
-    request(url, renderTweets)
+    $('form').submit(function(event) {
+        event.preventDefault()
+        const upsPackage = $(this).serialize()
+        request(
+            returnMeTheOption('post',upsPackage )
+        )
+    })
+    
+
+
+
+    request( returnMeTheOption('get'), renderTweets)
     
     
     

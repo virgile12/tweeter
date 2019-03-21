@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./styles/nav.css" type="text/css" />
     <!-- new-tweet CSS file link-->
     <link rel="stylesheet" href="./styles/new-tweet.css" type="text/css" />
+    
     <!--Main tweets stylesheet      -->
     <link rel="stylesheet" href="./styles/main-tweet.css" type="text/css" />
     
@@ -24,6 +25,8 @@
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <!--Date unix function script-->
+    <script type="text/javascript" src="./scripts/moment.js"></script>
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
@@ -49,11 +52,11 @@
           </form>
         </div>
       </div>
-        <div class="wrapper">
-          <article class="main-tweets-container flex"> 
+        <section class="main-tweet-section">
+          <article class="main-tweets-container"> 
             <header class="tweet-header-sizing">
                <div class="img-h2-header">
-                <img src="http://placehold.it/200x200">
+                <img src="http://placehold.it/50x50">
                 <h2 class="move-motherfucker">Newton
                 </h2>
               </div>
@@ -73,9 +76,10 @@
               </div>
             </footer>
           </article>
-        </div>
+        </section>
       
     </main>
 
   </body>
 </html>
+

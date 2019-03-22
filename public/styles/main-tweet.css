@@ -74,6 +74,15 @@
     border: 1px solid black;
 }
 
+.main-tweets-container div.error-box {
+    display:none;
+}
+
+.main-tweets-container div.error-message {
+    display: inline-block;
+    width:100%;
+}
+
 
 
 

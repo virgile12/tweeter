@@ -139,7 +139,7 @@ $(document).ready(function() {
         request(
             returnMeTheOption('post',upsPackage ), 
             function(res ){   //tweet
-                request( returnMeTheOption('get'), renderTweets);debugger
+                request( returnMeTheOption('get'), renderTweets);
 
                 //         $(".main-tweet-section").prepend(createTweetElement(tweetsObjs))
 

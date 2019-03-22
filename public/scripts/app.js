@@ -104,8 +104,14 @@ createTweetElement = (tweetObj) => {
 // $(".main-tweet-section").append(createTweetElement(tweetDb))
 const renderTweets = (data) => {
 
-for (const tweetsObjs of data) {
-    $(".main-tweet-section").append(createTweetElement(tweetsObjs))
+   const sortedData = data.sort(function(a, b) {
+       return b.created_at - a.created_at
+   });
+   
+    $(".main-tweet-section").empty();
+
+    for (const tweetsObjs of sortedData) {
+        $(".main-tweet-section").append(createTweetElement(tweetsObjs))
     };
 };
 
@@ -129,17 +135,19 @@ $(document).ready(function() {
     $('form').submit(function(event) {
         event.preventDefault()
         const upsPackage = $(this).serialize()
+        console.log(upsPackage)
         request(
-            returnMeTheOption('post',upsPackage )
+            returnMeTheOption('post',upsPackage ), 
+            function(res ){   //tweet
+                request( returnMeTheOption('get'), renderTweets);debugger
+
+                //         $(".main-tweet-section").prepend(createTweetElement(tweetsObjs))
+
+            }
         )
     })
     
-
-
-
     request( returnMeTheOption('get'), renderTweets)
     
-    
-    
-
 })
+

@@ -23,6 +23,7 @@ $(document).ready(function() {
 
     $("nav button.btn-navbar").on("click", function() {
          $("div.compose-tweet").slideToggle( "slow" );
+         $("textarea.textspot").select();
         
     });
 

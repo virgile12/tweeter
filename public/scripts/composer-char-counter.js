@@ -7,7 +7,7 @@ $(document).ready(function() {
         if (currentCharLength > maxCharLength) {
             $("main form span").addClass("max-char-error")
             $("main form input").attr("disabled", "disabled")
-            $("div.error-box").addClass("error-message").text('Warning! Tweet input length exceeded.')
+            $("div.error-box").addClass("error-message").text('Warning! Tweet length exceeded.')
             
         }  else if ( $("main form textarea").val().trim() === '') {
             $("main form input").attr("disabled", "disabled")

@@ -46,8 +46,8 @@
 
 .main-tweets-container main.main-tweet-box{
     display: flex;
-    padding-bottom: 3rem;
-    padding-top: 3rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
 }
 
 .main-tweets-container main.main-tweet-box p.main-tweet-text{
@@ -56,6 +56,7 @@
     align-content: center;
     font-size: 1.0rem;
     padding-left: 1rem;
+    overflow: hidden;
 }
 
 

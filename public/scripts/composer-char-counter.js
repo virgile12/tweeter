@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    $('main form input').attr('disabled', 'disabled')
     $('div.compose-tweet').hide()
     $('nav button.btn-navbar').on('click', function() {
          $('div.compose-tweet').slideToggle( 'slow' );

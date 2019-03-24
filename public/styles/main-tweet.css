@@ -112,11 +112,15 @@ button.dislike {
     border: 1px solid black;
 }
 
- div.error-box {
+div.error-box {
     display:none;
 }
 
-div.error-message {
+div.error-box {
+    display:none;
+}
+
+.main-tweets-container div.error-message {
     display: inline-block;
     width:100%;
 }

@@ -9,7 +9,7 @@
     border-radius: 5px;
 }
 
-header.tweet-header-sizing {
+.tweet-header-sizing {
     background-color: rgb(231, 211, 211);
     display: flex;
     width: 100%;
@@ -17,30 +17,30 @@ header.tweet-header-sizing {
     border-radius: 5px;
 }
 
-header div.img-h2-header {
+.img-h2-header {
     align-items: center;
     display: flex;
     height: 100%;
 }
 
-header div.img-h2-header img {
+.img-h2-header img {
     display: inline;
     padding: 0.8rem;
 }
 
-header div.img-h2-header .header-name{
+.img-h2-header .header-name{
     display: inline;
     font-size: 1.2rem;
     align-self: normal;
 }
 
-header div.h3-header h3.h3-header-text {
+.h3-header h3.h3-header-text {
     font-size: 0.7rem;
     padding-right: 0.6rem;
     padding-top: 0.6rem;
 }
 
-header div.img-h3 {
+ .img-h3 {
     justify-content: flex-end;
 }
 
@@ -50,7 +50,7 @@ main.main-tweet-box{
     padding-top: 2rem;
 }
 
-main.main-tweet-box p.main-tweet-text{
+p.main-tweet-text{
     display: flex;
     justify-content: flex-start;
     align-content: center;
@@ -61,15 +61,52 @@ main.main-tweet-box p.main-tweet-text{
 }
 
 footer.footer-main {
+    display:flex;
+    justify-content: space-between;
     border-top: 0.5px solid black;
     width: 100%;
 }
 
-footer.footer-main h3.footer-main-h3 {
+h3.footer-main-h3 {
     display: flex;
     padding-left: 0.7rem;
     font: 1rem italic;
+    font-size: small;
 }
+
+.tweet-social-buttons {
+    display: flex;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+
+button.like {
+    align-items: flex-end;
+	width: 30px;
+	height: 30px;
+	margin: 0 auto;
+	border-radius: 50%;
+	color: rgba(0,150,136 ,1);
+	background-color:rgba(38,166,154 ,0.3);
+	border-color: rgba(0,150,136 ,1);
+	border-width: 1px;
+	font-size: 15px;
+}
+
+button.dislike {
+    align-items: flex-end;
+	width: 30px;
+	height: 30px;
+	margin: 0 auto;
+	border-radius: 50%;
+	color: rgba(255,82,82 ,1);
+	background-color: rgba(255,138,128 ,0.3);
+	border-color: rgba(255,82,82 ,1);
+	border-width: 1px;
+	font-size: 15px;
+}
+
+
 
 .main-tweets-container:hover {
     border: 1px solid black;
@@ -79,7 +116,7 @@ footer.footer-main h3.footer-main-h3 {
     display:none;
 }
 
-.main-tweets-container div.error-message {
+div.error-message {
     display: inline-block;
     width:100%;
 }

@@ -45,37 +45,58 @@ createTweetElement = (tweetObj) => {
     .addClass('h3-header-text')
     .text(tweetObj.user.handle)
     
+    // appending all elements of header into divHeader
     divH3.append(h3Header);
     divH2Img.append(imgName).append(h2Name)
     divHeader.append(divH2Img).append(divH3)
-    
+  
     // Body
     const tweetMain = $('<main>')
     .addClass('main-tweet-box')
-    
+
     const tweetBody = $('<p>')
     .addClass('main-tweet-text')
     .text(tweetObj.content.text)
     
+    // appending elements of body into tweetMain
     tweetMain.append(tweetBody)
-    
+
     // Footer
     const footerTweet = $('<footer>')
     .addClass('footer-main')
     
-    
     const footerH3 = $('<h3>')
     .addClass('footer-main-h3')
     .text(moment(tweetObj.created_at).fromNow())
-    
-    footerTweet.append(footerH3)
-    
+
+    // Footer like/dislike buttons
+    const socialBtnBox = $('<div>')
+    .addClass('tweet-social-buttons')
+
+    const footerLikeBtn = $('<button>')
+    .addClass('like')
+
+    const footerLikeBtnSty = $('<i>')
+    .addClass('fa fa-thumbs-o-up')
+
+    const footerDislikeBtn = $('<button>')
+    .addClass('dislike')
+
+    const footerDislikeBtnSty = $('<i>')
+    .addClass('fa fa-thumbs-o-down')
+
+    // appending elements of footer into footerTweet
+    footerLikeBtn.append(footerLikeBtnSty)
+    footerDislikeBtn.append(footerDislikeBtnSty)
+    socialBtnBox.append(footerLikeBtn).append(footerDislikeBtn)
+    footerTweet.append(footerH3).append(socialBtnBox)
+
     // Appending Header, main and Footer to articleMain
     articleMain.append(divHeader).append(tweetMain).append(footerTweet);
-    
+
     return articleMain;
-    
 }
+
 // render function, sort/empty and loop through the sortedData
 const renderTweets = (data) => {
 
@@ -105,16 +126,16 @@ $(document).ready(function() {
     //Function to render tweets without refreshing main page. (Callback hell below)
 
     $('form').submit(function(event) {
-        event.preventDefault()
-        const upsPackage = $(this).serialize()
+        event.preventDefault();
+        const upsPackage = $(this).serialize();
         request(
             returnMeTheOption('post',upsPackage ), 
             function(res ){
-                request( returnMeTheOption('get'), renderTweets);
+                request( returnMeTheOption('get'), renderTweets)
             }
         )
-    })
-    
+    });
+
     request( returnMeTheOption('get'), renderTweets)
-    
-})
+  
+});

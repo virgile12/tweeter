@@ -20,6 +20,7 @@
     width: 450px;
     margin-top: 10rem;
     border-radius: 5px;
+    display: inline-grid;
    }
   
    .compose-tweet h2 {
@@ -53,8 +54,7 @@
    }
 
    .compose-tweet form div {
-     display: flex;
-     justify-content : space-between
+     display: flow-root;
    }
    
   .compose-tweet input {
@@ -62,15 +62,13 @@
     align-content: flex-start;
     justify-content: flex-start;
     margin-left: 9px;
-    margin-bottom: 2rem;
   }
   
   .compose-tweet form div span.counter {
     display: flex;
-    align-content: flex-end;
     justify-content: flex-end;
-    margin-right: 15px;
-    margin-bottom: 2rem;
+    padding-right: 5px;
+    padding-bottom: 5px;
 
   }
   .compose-tweet  span.max-char-error {
@@ -80,7 +78,3 @@
   div.compose-tweet:hover {
     border: 1px solid black;
 }
-
-
-
-  /* textarea:active or :focus (selector)

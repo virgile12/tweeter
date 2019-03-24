@@ -1,8 +1,4 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery"s document ready function
- */
+
 
 const request = (options, cb) => {
     console.log(options)
@@ -13,60 +9,39 @@ const request = (options, cb) => {
     })
 
    .fail(() => {
-    alert("error")
+    alert('error')
     })
 
     .always(() => {
     });
 };
 
-
-
-// let tweetDb = {
-//     "user": {
-//         "name": "Newton",
-//         "avatars": {
-//             "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-//             "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-//             "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-//         },
-//         "handle": "@SirIsaac"
-//     },
-//     "content": {
-//         "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1553196460021
-    
-// }
-
 createTweetElement = (tweetObj) => {
-    
+
     // Main
-    const articleMain = $("<article>")
-    .addClass("main-tweets-container")
-    
+    const articleMain = $('<article>')
+    .addClass('main-tweets-container')
+
     // Header
-    const divHeader = $("<header>")
-    .addClass("tweet-header-sizing")
-    
-    const divH2Img = $("<div>")
-    .addClass("img-h2-header")
-    
-    
-    const imgName = $("<img>")
-    .attr( "src", tweetObj.user.avatars.small)
-    
-    
-    const h2Name = $("<h2>")
-    .addClass("move-motherfucker")
+    const divHeader = $('<header>')
+    .addClass('tweet-header-sizing')
+
+    const divH2Img = $('<div>')
+    .addClass('img-h2-header')
+
+    const imgName = $('<img>')
+    .attr( 'src', tweetObj.user.avatars.small)
+
+    const h2Name = $('<h2>')
+    .addClass('header-name')
     .text(tweetObj.user.name)
     
-    const divH3 = $("<div>")
-    .addClass("h3-header")
+    const divH3 = $('<div>')
+    .addClass('h3-header')
     
     
-    const h3Header = $("<h3>")
-    .addClass("h3-header-text")
+    const h3Header = $('<h3>')
+    .addClass('h3-header-text')
     .text(tweetObj.user.handle)
     
     divH3.append(h3Header);
@@ -74,22 +49,22 @@ createTweetElement = (tweetObj) => {
     divHeader.append(divH2Img).append(divH3)
     
     // Body
-    const tweetMain = $("<main>")
-    .addClass("main-tweet-box")
+    const tweetMain = $('<main>')
+    .addClass('main-tweet-box')
     
-    const tweetBody = $("<p>")
-    .addClass("main-tweet-text")
+    const tweetBody = $('<p>')
+    .addClass('main-tweet-text')
     .text(tweetObj.content.text)
     
     tweetMain.append(tweetBody)
     
     // Footer
-    const footerTweet = $("<footer>")
-    .addClass("footer-main")
+    const footerTweet = $('<footer>')
+    .addClass('footer-main')
     
     
-    const footerH3 = $("<h3>")
-    .addClass("footer-main-h3")
+    const footerH3 = $('<h3>')
+    .addClass('footer-main-h3')
     .text(moment(tweetObj.created_at).fromNow())
     
     footerTweet.append(footerH3)
@@ -101,17 +76,17 @@ createTweetElement = (tweetObj) => {
     
 }
 
-// $(".main-tweet-section").append(createTweetElement(tweetDb))
+// $('.main-tweet-section').append(createTweetElement(tweetDb))
 const renderTweets = (data) => {
 
    const sortedData = data.sort(function(a, b) {
        return b.created_at - a.created_at
    });
    
-    $(".main-tweet-section").empty();
+    $('.main-tweet-section').empty();
 
     for (const tweetsObjs of sortedData) {
-        $(".main-tweet-section").append(createTweetElement(tweetsObjs))
+        $('.main-tweet-section').append(createTweetElement(tweetsObjs))
     };
 };
 
@@ -127,22 +102,13 @@ const returnMeTheOption = function(method, data) {
 
 $(document).ready(function() {
 
-
-            // take in array of objects for tweets and append each one to articleMain
-            // leverage the createTweetElement by passing it to the tweet object
-            
-            // use the returned jQuery object by appending it to the articleMain section
     $('form').submit(function(event) {
         event.preventDefault()
         const upsPackage = $(this).serialize()
-        console.log(upsPackage)
         request(
             returnMeTheOption('post',upsPackage ), 
-            function(res ){   //tweet
+            function(res ){
                 request( returnMeTheOption('get'), renderTweets);
-
-                //         $(".main-tweet-section").prepend(createTweetElement(tweetsObjs))
-
             }
         )
     })
@@ -150,4 +116,3 @@ $(document).ready(function() {
     request( returnMeTheOption('get'), renderTweets)
     
 })
-

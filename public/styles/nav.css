@@ -10,10 +10,6 @@
     box-sizing: inherit;
   }
   
-  /*
-   * Global layout stuff
-   */
-  
    nav#nav-bar {
     position: fixed;
     top: 0;
@@ -25,11 +21,13 @@
     color: #e8fdff;
     background-color: #00a087;
   }
+
   nav img.logo {
       float:left;
       height: 80px;
       width: 80px;
   }
+
   nav span.header {
     line-height: 200%;
     float: left;
@@ -37,7 +35,6 @@
     width: 80px;
     font-size: 32px;
     padding-left: 10px;
-
   }
 
   nav button.btn-navbar {
@@ -48,12 +45,7 @@
     float: right;
     width: 120px;
     height: 60px;
-
-
   }
-  /*
-   * Additional CSS can be defined below or in other CSS files, as per instructions
-   */
    
    
   

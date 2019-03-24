@@ -20,6 +20,8 @@
     margin: 0;
     color: #e8fdff;
     background-color: #00a087;
+    z-index: 99;
+
   }
 
   nav img.logo {

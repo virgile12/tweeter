@@ -1,4 +1,5 @@
 
+//Ajax request
 
 const request = (options, cb) => {
     console.log(options)
@@ -75,8 +76,7 @@ createTweetElement = (tweetObj) => {
     return articleMain;
     
 }
-
-// $('.main-tweet-section').append(createTweetElement(tweetDb))
+// render function, sort/empty and loop through the sortedData
 const renderTweets = (data) => {
 
    const sortedData = data.sort(function(a, b) {
@@ -101,6 +101,8 @@ const returnMeTheOption = function(method, data) {
 } 
 
 $(document).ready(function() {
+
+    //Function to render tweets without refreshing main page. (Callback hell below)
 
     $('form').submit(function(event) {
         event.preventDefault()

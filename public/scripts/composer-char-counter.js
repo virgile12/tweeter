@@ -1,7 +1,12 @@
 $(document).ready(function() {
+    $('div.compose-tweet').hide()
+    $('nav button.btn-navbar').on('click', function() {
+         $('div.compose-tweet').slideToggle( 'slow' );
+         $('textarea.textspot').select();
+        
     $('main form textarea').on('input', function(event) {
-       const maxCharLength = 140;
-       const currentCharLength = $(this).val().length;
+        const maxCharLength = 140;
+        const currentCharLength = $(this).val().length;
        
        $('main form span').text(maxCharLength - currentCharLength)
         if (currentCharLength > maxCharLength) {
@@ -22,9 +27,6 @@ $(document).ready(function() {
         }
     })
 
-    $('nav button.btn-navbar').on('click', function() {
-         $('div.compose-tweet').slideToggle( 'slow' );
-         $('textarea.textspot').select();
      
     });
 });
